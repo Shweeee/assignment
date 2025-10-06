@@ -42,8 +42,8 @@ export default function App() {
   params.maxSalary = filters.salaryRange[1];
 }
 
+const res = await API.get('/api/jobs', { params });
 
-      const res = await API.get('/jobs', { params });
       setJobs(res.data.items);
     } catch (error) {
       console.error("Failed to fetch jobs:", error);
